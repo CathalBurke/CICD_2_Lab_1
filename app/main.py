@@ -30,3 +30,8 @@ def get_user(user_id:int):
     for existing_user in users:
         if existing_user.userid == user_id:
             return existing_user
+
+    raise HTTPException(
+        status_code=status.HTTP_404_NOT_FOUND,
+        detail="user not found"
+    )
