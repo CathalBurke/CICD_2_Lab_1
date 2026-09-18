@@ -21,3 +21,7 @@ def add_user(new_user:UserCreate):
             )
     users.append(new_user)
     return new_user
+
+@app.get("/api/users")
+def get_users():
+    return users
